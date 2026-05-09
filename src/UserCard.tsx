@@ -8,6 +8,7 @@ function UserCard(props: UserCardProps) {
     <div>
       <h2>{props.name}</h2>
       <p>{props.job}</p>
+      <button>Нажми!</button>
     </div>
   )
 }
