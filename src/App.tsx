@@ -2,53 +2,35 @@
 import { useState } from "react";
 
 function App() {
-  const [firstNumber, setFirstNumber] = useState<string>('');
-  const [secondNumber, setSecondNumber] = useState<string>('');
-  const [operation, setOperation] = useState<string>('+');
-  const [result, setResult] = useState<number | null>(null);
+  const [text, setText] = useState<string>('');
+  const [todos, setTodos] = useState<string[]>([]);
 
-  const calculate =(): void =>{
-    const a = Number(firstNumber);
-    const b = Number(secondNumber);
-  
-    if(operation === '+'){
-      setResult(a + b);
-    }else if(operation === '-'){
-      setResult(a - b);
-    }else if (operation === '/'){
-      setResult(a / b);
-    }else if(operation === '*'){
-      setResult(a * b);
+  const addTodo = (): void =>{
+    if(text.trim() === ''){
+      return;
     }
-  }
+
+    setTodos([... todos, text]);
+    setText('');
+  };
+  
   return (
     <div>
-      <h1>Калькулятор</h1>
+      <h1>ToDo List</h1>
 
       <input
-        type="number"
-        value={firstNumber}
-        onChange={(event) => setFirstNumber(event.target.value)}
+      type="text"
+      value={text}
+      onChange={(event)=>setText(event.target.value)}
       />
 
-      <select
-      value={operation}
-      onChange={(event) => setOperation(event.target.value)}
-      >
-        <option value='+'>+</option>
-        <option value='-'>-</option>
-        <option value='/'>/</option>
-        <option value='*'>*</option>
-      </select>
+      <button onClick={addTodo}>Добавить</button>
 
-      <input
-        type="number"
-        value={secondNumber}
-        onChange={(event) => setSecondNumber(event.target.value)}
-      />
-
-      <button onClick={calculate}>Посчитать</button>
-      <h2>Результат:{result}</h2>
+      <ul>
+        {todos.map((todo,index)=>(
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
     </div>
   )
 }
