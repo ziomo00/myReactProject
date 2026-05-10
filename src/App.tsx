@@ -1,33 +1,52 @@
 //import UserCard from './UserCard'
 import { useState } from "react";
+import MyButton from "./components/MyButton";
 
 function App() {
-  const [text, setText] = useState<string>('');
+  const [count, setCount] = useState(0);
   const [todos, setTodos] = useState<string[]>([]);
+  const [text, setText] = useState<string>('');
+  
+  const increment = ()=>{
+    setCount(prev => prev + 1);
+  };
 
-  const addTodo = (): void =>{
-    if(text.trim() === ''){
-      return;
-    }
-
-    setTodos([... todos, text]);
-    setText('');
+  const decrement = () => {
+    setCount(prev => prev - 1);
   };
   
+  const reset = () => {
+    setCount(0);
+  };
+
+  const AddTodos = () =>{
+    if(text.trim() === ''){
+      return
+    }
+
+    setTodos([... todos,text]);
+    setText('');
+  }
+
   return (
     <div>
-      <h1>ToDo List</h1>
+      <h1>Счётчик: {count}</h1>
+      <MyButton title="+" onClick={increment} />
+      <MyButton title="-" onClick={decrement} />
+      <MyButton title="Сбросить" onClick={reset} />
 
-      <input
-      type="text"
-      value={text}
-      onChange={(event)=>setText(event.target.value)}
-      />
+      <h2>ToDo Лист</h2>
 
-      <button onClick={addTodo}>Добавить</button>
+        <input
+        type="text"
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+        />
+
+        <MyButton title="Добавить" onClick={AddTodos} />
 
       <ul>
-        {todos.map((todo,index)=>(
+        {todos.map((todo,index) => (
           <li key={index}>{todo}</li>
         ))}
       </ul>
