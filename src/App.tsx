@@ -2,54 +2,62 @@
 import { useState } from "react";
 import MyButton from "./components/MyButton";
 
+type Task = {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState<string[]>([]);
   const [text, setText] = useState<string>('');
-  
-  const increment = ()=>{
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
     setCount(prev => prev + 1);
   };
 
   const decrement = () => {
     setCount(prev => prev - 1);
   };
-  
-  const reset = () => {
+
+  const back = () =>{
     setCount(0);
   };
 
-  const AddTodos = () =>{
-    if(text.trim() === ''){
-      return
-    }
-
-    setTodos([... todos,text]);
-    setText('');
+  const newTask = () => {
+  if (!text.trim()) {
+    return;
   }
+
+  const newTask = {
+    id: Date.now(),
+    text: text,
+    completed: false
+  };
+
+    setTasks([...tasks, newTask]);
+    setText('');
+  };
 
   return (
     <div>
-      <h1>Счётчик: {count}</h1>
-      <MyButton title="+" onClick={increment} />
-      <MyButton title="-" onClick={decrement} />
-      <MyButton title="Сбросить" onClick={reset} />
+      <h1>Счётчик {count}</h1>
+      <MyButton title="+" onClick={increment}/>
+      <MyButton title="-" onClick={decrement}/>
+      <MyButton title="Вернуть" onClick={back}/>
 
-      <h2>ToDo Лист</h2>
-
-        <input
-        type="text"
+      <h1>todoList</h1>
+        <input 
         value={text}
-        onChange={(event) => setText(event.target.value)}
+        onChange={event => setText(event.target.value)}
         />
-
-        <MyButton title="Добавить" onClick={AddTodos} />
-
-      <ul>
-        {todos.map((todo,index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul>
+        <MyButton title="Добавить задачу" onClick={newTask}/>
+        <ul>
+          {tasks.map((task) => 
+            <li key={task.id}>{task.text}</li>
+          )}
+        </ul>
     </div>
   )
 }
