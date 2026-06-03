@@ -45,7 +45,7 @@ function Navbar() {
           <img
             src="/settings.svg"
             alt=""
-            className="h-5 w-5 invert opacity-80 transition duration-200 group-hover:rotate-45 group-hover:opacity-100"
+            className="h-5 w-5 opacity-80 transition duration-200 group-hover:rotate-45 group-hover:opacity-100"
           />
         </button>
       </nav>

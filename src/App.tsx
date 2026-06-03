@@ -17,7 +17,25 @@ function App() {
       <Navbar />
 
       <section className="mx-auto max-w-7xl py-12">
-        {/* Здесь будет контент страницы */}
+        <div>
+          <p>Доброе утро, Денис</p>
+          <h1 className="text-4xl font-[1000]">
+            Держи фокус,<br />
+            Двигай линию</h1>
+        </div>
+
+        <div>
+
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
       </section>
     </main>
 )
