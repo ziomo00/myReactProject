@@ -29,12 +29,22 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div>
-
+      <section className="grid grid-cols-2 gap-6">
+        <div className="p-6 bg-white rounded-xl shadow">
+          <p className="text-muted text-sm font-bold">СЕЙЧАС В ФОКУСЕ</p>
+          <h2 className="text-4xl font-[900]">Запустить MVP<br />FocusLine</h2>
         </div>
-        <div>
-
+        <div className="p-6 bg-white rounded-xl shadow text-black">
+          <p className="text-muted text-sm font-bold">КАЛЕНДАРЬ</p>
+        </div>
+        <div className="p-6 bg-white rounded-xl shadow text-black">
+          <p className="text-muted text-sm font-bold">ПЛАН НА СЕГОДНЯ</p>
+        </div>
+        <div className="p-6 bg-white rounded-xl shadow text-black">
+          <p className="text-muted text-sm font-bold">ФОКУС-СЕССИЯ</p>
+        </div>
+        <div className="p-6 bg-white rounded-xl shadow text-black col-span-2">
+          <p className="text-muted text-sm font-bold">ЛИНИЯ ФОКУСА</p>
         </div>
       </section>
     </main>
