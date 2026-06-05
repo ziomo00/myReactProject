@@ -30,20 +30,31 @@ function App() {
       </section>
 
       <section className="grid grid-cols-2 gap-6">
-        <div className="p-6 bg-white rounded-xl shadow">
+        <div className="p-6 bg-white rounded-3xl shadow">
           <p className="text-muted text-sm font-bold">СЕЙЧАС В ФОКУСЕ</p>
-          <h2 className="text-4xl font-[900]">Запустить MVP<br />FocusLine</h2>
+          <h2 className="text-4xl text-black font-[900]">Запустить MVP<br />FocusLine</h2>
+          <div className="grid grid-cols-3 gap-3 text-black">
+            <div>
+              efwefw
+            </div>
+            <div>
+              fefe
+            </div>
+            <div>
+              efef
+            </div>
+          </div>
         </div>
-        <div className="p-6 bg-white rounded-xl shadow text-black">
+        <div className="p-6 bg-white rounded-3xl shadow text-black">
           <p className="text-muted text-sm font-bold">КАЛЕНДАРЬ</p>
         </div>
-        <div className="p-6 bg-white rounded-xl shadow text-black">
+        <div className="p-6 bg-white rounded-3xl shadow text-black">
           <p className="text-muted text-sm font-bold">ПЛАН НА СЕГОДНЯ</p>
         </div>
-        <div className="p-6 bg-white rounded-xl shadow text-black">
+        <div className="p-6 bg-white rounded-3xl shadow text-black">
           <p className="text-muted text-sm font-bold">ФОКУС-СЕССИЯ</p>
         </div>
-        <div className="p-6 bg-white rounded-xl shadow text-black col-span-2">
+        <div className="p-6 bg-white rounded-3xl shadow text-black col-span-2">
           <p className="text-muted text-sm font-bold">ЛИНИЯ ФОКУСА</p>
         </div>
       </section>
