@@ -1,5 +1,5 @@
-
 import Navbar from "./components/Navbar";
+import Calendar from "./components/Calendar";
 
 const pageBackground = {
   background:
@@ -8,7 +8,6 @@ const pageBackground = {
 
 function App() {
 
-
   return (
   <main
       className="min-h-screen px-7 py-7 text-white"
@@ -16,7 +15,7 @@ function App() {
     >
       <Navbar />
 
-      <section className="mx-auto max-w-7xl py-12">
+      <section className="mx-auto max-w-7xl py-12 grid grid-cols-2 ">
         <div>
           <p>Доброе утро, Денис</p>
           <h1 className="text-4xl font-[1000]">
@@ -24,8 +23,9 @@ function App() {
             Двигай линию</h1>
         </div>
 
-        <div>
-
+        <div className="rounded-3xl border border-white/20 bg-white/10 px-6 shadow-[0_18px_45px_rgba(23,23,38,0.14)] backdrop-blur-[18px]">
+            На сегодня запланировано 3 лавных шага.<br/>
+            Отличнный день, чтобы закрыть все дедлайны.
         </div>
       </section>
 
@@ -35,18 +35,21 @@ function App() {
           <h2 className="text-4xl text-black font-[900]">Запустить MVP<br />FocusLine</h2>
           <div className="grid grid-cols-3 gap-3 text-black">
             <div>
-              efwefw
+              <p className="text-muted text-sm">Следующий шаг</p>
+              Экран задач
             </div>
             <div>
-              fefe
+              <p className="text-muted text-sm">Дедлайн</p>
+              20 июня
             </div>
             <div>
-              efef
+              <p className="text-muted text-sm">Осталось</p>
+              12 задач
             </div>
           </div>
         </div>
-        <div className="p-6 bg-white rounded-3xl shadow text-black">
-          <p className="text-muted text-sm font-bold">КАЛЕНДАРЬ</p>
+        <div>
+          <Calendar/>
         </div>
         <div className="p-6 bg-white rounded-3xl shadow text-black">
           <p className="text-muted text-sm font-bold">ПЛАН НА СЕГОДНЯ</p>
