@@ -1,5 +1,9 @@
 import Navbar from "./components/Navbar";
 import Calendar from "./components/Calendar";
+import NowInFocus from "./components/NowInFocus"
+import Today from "./components/Today";
+import Session from "./components/Session";
+import Focus from "./components/Focus";
 
 const pageBackground = {
   background:
@@ -14,7 +18,6 @@ function App() {
       style={pageBackground}
     >
       <Navbar />
-
       <section className="mx-auto max-w-7xl py-12 grid grid-cols-2 ">
         <div>
           <p>Доброе утро, Денис</p>
@@ -28,41 +31,15 @@ function App() {
             Отличнный день, чтобы закрыть все дедлайны.
         </div>
       </section>
-
       <section className="grid grid-cols-2 gap-6">
-        <div className="p-6 bg-white rounded-3xl shadow">
-          <p className="text-muted text-sm font-bold">СЕЙЧАС В ФОКУСЕ</p>
-          <h2 className="text-4xl text-black font-[900]">Запустить MVP<br />FocusLine</h2>
-          <div className="grid grid-cols-3 gap-3 text-black">
-            <div>
-              <p className="text-muted text-sm">Следующий шаг</p>
-              Экран задач
-            </div>
-            <div>
-              <p className="text-muted text-sm">Дедлайн</p>
-              20 июня
-            </div>
-            <div>
-              <p className="text-muted text-sm">Осталось</p>
-              12 задач
-            </div>
-          </div>
-        </div>
-        <div>
+          <NowInFocus />
           <Calendar/>
-        </div>
-        <div className="p-6 bg-white rounded-3xl shadow text-black">
-          <p className="text-muted text-sm font-bold">ПЛАН НА СЕГОДНЯ</p>
-        </div>
-        <div className="p-6 bg-white rounded-3xl shadow text-black">
-          <p className="text-muted text-sm font-bold">ФОКУС-СЕССИЯ</p>
-        </div>
-        <div className="p-6 bg-white rounded-3xl shadow text-black col-span-2">
-          <p className="text-muted text-sm font-bold">ЛИНИЯ ФОКУСА</p>
-        </div>
+          <Today />
+          <Session />
+          <Focus />
       </section>
     </main>
 )
 }
 
-export default App
+export default App;
