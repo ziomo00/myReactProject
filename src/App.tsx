@@ -31,11 +31,15 @@ function App() {
             Отличнный день, чтобы закрыть все дедлайны.
         </div>
       </section>
-      <section className="grid grid-cols-2 gap-6">
+      <section>
+        <div className="grid grid-cols-[1.42fr_0.82fr] gap-6">
           <NowInFocus />
           <Calendar/>
+        </div>
+        <div className="grid grid-cols-[1.42fr_0.60fr] gap-6">
           <Today />
           <Session />
+        </div>
           <Focus />
       </section>
     </main>
