@@ -1,8 +1,10 @@
+import Card from "../ui/Card";
+
 function Today(){
     return(
-        <div className="p-6 bg-white rounded-3xl shadow text-black">
+        <Card className="bg-white/95 text-[#171726]">
           <p className="text-muted text-sm font-bold">ПЛАН НА СЕГОДНЯ</p>
-        </div>
+        </Card>
     )
 }
 export default Today;

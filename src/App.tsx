@@ -1,9 +1,9 @@
-import Navbar from "./components/Navbar";
-import Calendar from "./components/Calendar";
-import NowInFocus from "./components/NowInFocus"
-import Today from "./components/Today";
-import Session from "./components/Session";
-import Focus from "./components/Focus";
+import Navbar from "./components/home/Navbar";
+import Calendar from "./components/home/Calendar";
+import NowInFocus from "./components/home/NowInFocus"
+import Today from "./components/home/Today";
+import Session from "./components/home/Session";
+import Focus from "./components/home/Focus";
 
 const pageBackground = {
   background:
@@ -18,7 +18,7 @@ function App() {
       style={pageBackground}
     >
       <Navbar />
-      <section className="mx-auto max-w-7xl py-12 grid grid-cols-2 ">
+      <section className="mx-auto max-w-7xl py-12 grid grid-cols-[1.37fr_0.65fr] ">
         <div>
           <p>Доброе утро, Денис</p>
           <h1 className="text-4xl font-[1000]">
@@ -31,7 +31,7 @@ function App() {
             Отличнный день, чтобы закрыть все дедлайны.
         </div>
       </section>
-      <section>
+      <section className="mx-auto max-w-7xl space-y-6">
         <div className="grid grid-cols-[1.42fr_0.82fr] gap-6">
           <NowInFocus />
           <Calendar/>
